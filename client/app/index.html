@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<title>My HTML File</title>
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-resource.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
+	
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="app-controller.js"></script>
+	<script type="text/javascript" src="components/httprequesttracker/httprequesttracker.js"></script>
+	<script type="text/javascript" src="components/resource/video.js"></script>
+</head>
+<body ng-controller="AppController">
+ 
+	<p>{{title}}</p>
+  
+	<p>
+	<ul ng-show="hasPendingRequests()">
+		<img src="../assets/img/spinner.gif">
+	</ul>
+	<ul ng-show="!hasPendingRequests()">
+	<li ng-repeat="video in videos">
+		<strong>{{ video.name }}</strong>: {{ video.description }}
+	</li>
+	</ul>
+	</p>
+  
+</body>
+</html>
